@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Slf4j
 @Entity
-@Table(name="shop_owner_detail" , schema = "public")
+@Table(name="shop_owner_detail_tbl" , schema = "public")
 @NoArgsConstructor
 @Getter
 @Setter
@@ -34,11 +34,12 @@ public class ShopOwnerDetail {
     @Column(name = "ssn")
     private String ssn;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    private ShopOwner shopOwner;
+
     @Column(name = "owner_birthday")
     private Date ownerBirthday;
 
-    @OneToOne(cascade = CascadeType.ALL , mappedBy = "shopOwnerDetail" , fetch = FetchType.LAZY)
-    private ShopOwner shopOwner;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date")

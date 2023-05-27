@@ -27,14 +27,14 @@ public class ShopOwner {
     @Column(name = "mobile" , length = 11 , unique = true , nullable = false)
     private String mobile;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "shop_owner_detail_id")
     private ShopOwnerDetail shopOwnerDetail;
-//
-//    @OneToMany(fetch=FetchType.LAZY,
-//            mappedBy="",
-//            cascade= CascadeType.ALL)
-//    private ShopDetail shopDetail;
+
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "shop_detail_id")
+    private ShopDetail shopDetail;
+
 
 
     @Temporal(TemporalType.TIMESTAMP)

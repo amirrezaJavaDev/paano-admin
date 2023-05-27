@@ -31,8 +31,7 @@ public class AdminSellersController {
     }
     @GetMapping("/find/shopowner/{id}")
     public ResponseEntity<?> findById(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader,@PathVariable Long id) {
-            adminSellerService.findShopOwnerWithId(authHeader,id);
-            return null;
+            return new ResponseEntity<>(adminSellerService.findShopOwnerWithId(authHeader,id),HttpStatus.CREATED);
     }
     @GetMapping("/find/shopdetail/{name}")
     private ResponseEntity<?> findByEnglishName(

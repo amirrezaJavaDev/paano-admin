@@ -58,12 +58,20 @@ public class AdminSellerService {
         }
     }
 
-    public void findShopOwnerWithId(String encoding,Long id){
-        ShopOwnerDto shopOwnerDto = new ShopOwnerDto();
-        if(authorizeUser(encoding)){
-            ShopOwner optionalEntity = shopOwnerRepo.findById(id).get();
-            System.out.println(optionalEntity);
+    public ShopOwnerDto findShopOwnerWithId(String encoding,Long id){
+        try{
+            if(authorizeUser(encoding)){
+                Optional<ShopOwner> optionalResult = shopOwnerRepo.findById(id);
+                if (optionalResult.isPresent()){
+                   return shopOwnerDtoManager.transferOwnerShopAndDetailToDto(optionalResult.get(),null,null);
+                }else{
+                    throw new CustomException("اطلاعات مسئول فروشگاهی با این ایدی یافت نشد");
+                }
+            }
+        }catch (RuntimeException ex){
+            throw new CustomException(ex.getMessage());
         }
+        return null;
     }
 
     public ShopOwnerDto findShopDetailByEngName(String encoding,String shopName){

@@ -24,6 +24,9 @@ public class ShopDetail {
     @SequenceGenerator(name = "shop_detail_seq", sequenceName = "shop_detail_seq", allocationSize = 1)
     private Long shopDetailId;
 
+    @OneToOne
+    private ShopOwner shopOwner;
+
     @Column(name = "instagram_shop" , length = 100)
     private String instagram;
 
@@ -39,7 +42,7 @@ public class ShopDetail {
     @Column(name = "email_shop_detail" , length = 100)
     private String shopDetailEmail;
 
-    @Column(name = "fax" , length = 100  , nullable = false)
+    @Column(name = "fax" , length = 100)
     private String fax;
 
     @Column(name = "sales_manager_name" , length = 100  , nullable = false)
@@ -75,6 +78,7 @@ public class ShopDetail {
     @Enumerated(EnumType.STRING)
     @Column(name = "position_type" , length = 100  , nullable = false)
     private FildPositionType fildPositionType;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "plan_type" , length = 100  , nullable = false)
     private PlanType planType;
@@ -84,16 +88,28 @@ public class ShopDetail {
 
     @Column(name = "shop_mobile" , length = 100 ,nullable = false)
     private String shopMobile;
+
     @Column(name = "image_top" , length = 100)
     private String imageTop;
+
     @Column(name = "image_top_2" , length = 100)
     private String imageTop2;
+
     @Column(name = "image_logo" , length = 100)
     private String imageLogo;
+
     @Column(name = "image_about" , length = 100)
     private String imageAbout;
+
     @Column(name = "image_letter_comandation" , length = 100)
     private String imageLetterOfCommandation;
+
+
+
+
+
+
+
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date")
