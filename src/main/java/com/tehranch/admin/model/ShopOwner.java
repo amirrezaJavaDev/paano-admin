@@ -9,10 +9,12 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Slf4j
 @Entity
-@Table(name="shop_owner_tbl" , schema = "public")
+@Table(name="shop_owner" , schema = "public")
 @NoArgsConstructor
 @Getter
 @Setter
@@ -27,15 +29,21 @@ public class ShopOwner {
     @Column(name = "mobile" , length = 11 , unique = true , nullable = false)
     private String mobile;
 
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "shop_owner_detail_id")
-    private ShopOwnerDetail shopOwnerDetail;
+    @Column(name = "owner_name" , length = 100)
+    private String ownerName;
 
-    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "shop_detail_id")
-    private ShopDetail shopDetail;
+    @Column(name = "ssn" , length = 10)
+    private String ssn;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "birth_date")
+    @JsonFormat(pattern = "yyyy-mm-dd")
+    private Date birthDate;
 
+    @OneToMany(fetch=FetchType.LAZY,
+            mappedBy="shopOwner",
+            cascade= CascadeType.ALL)
+    private Set<ShopDetail> shopDetails = new HashSet<>();
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date")
@@ -46,9 +54,6 @@ public class ShopOwner {
     @Column(name = "update_date")
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updateDate;
-
-
-
 
     @PrePersist
     protected void onCreateDate(){

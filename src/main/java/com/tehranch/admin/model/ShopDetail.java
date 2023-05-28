@@ -1,8 +1,9 @@
 package com.tehranch.admin.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.tehranch.admin.utils.FildPositionType;
-import com.tehranch.admin.utils.PlanType;
+import com.tehranch.admin.utils.FieldType;
+import com.tehranch.admin.utils.OrderRegister;
+import com.tehranch.admin.utils.PanelType;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,7 +13,7 @@ import java.util.Date;
 @Slf4j
 @Entity
 @Data
-@Table(name = "shop_detail_tbl")
+@Table(name = "shop_detail")
 @Getter
 @Setter
 @ToString
@@ -22,52 +23,7 @@ public class ShopDetail {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE , generator = "shop_detail_seq")
     @SequenceGenerator(name = "shop_detail_seq", sequenceName = "shop_detail_seq", allocationSize = 1)
-    private Long shopDetailId;
-
-    @OneToOne
-    private ShopOwner shopOwner;
-
-    @Column(name = "instagram_shop" , length = 100)
-    private String instagram;
-
-    @Column(name = "telegram_shop" , length = 100)
-    private String telegram;
-
-    @Column(name = "website_shop" , length = 100)
-    private String website;
-
-    @Column(name = "about_shop" , length = 100)
-    private String aboutShop;
-
-    @Column(name = "email_shop_detail" , length = 100)
-    private String shopDetailEmail;
-
-    @Column(name = "fax" , length = 100)
-    private String fax;
-
-    @Column(name = "sales_manager_name" , length = 100  , nullable = false)
-    private String salesManagerName;
-
-    @Column(name = "sales_manager_mobile" , length = 100  , nullable = false)
-    private String salesManagerMobile;
-
-    @Column(name = "address" , length = 100  , nullable = false)
-    private String address;
-
-    @Column(name = "code_post" , length = 100  , nullable = false)
-    private Long codePost;
-
-    @Column(name = "meta_description" , length = 100)
-    private String metadescription;
-
-    @Column(name = "meta_keywords" , length = 100)
-    private String metakeywords;
-
-    @Column(name = "estate_personal" , length = 100  , nullable = false)
-    private String estatePersonal;
-
-    @Column(name = "order_register" , length = 100)
-    private String orderRegister;
+    private Long id;
 
     @Column(name = "shop_name_per" , length = 100  , nullable = false)
     private String shopNamePersian;
@@ -75,19 +31,113 @@ public class ShopDetail {
     @Column(name = "shop_name_eng" , length = 100  , nullable = false,unique = true)
     private String shopNameEnglish;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "position_type" , length = 100  , nullable = false)
-    private FildPositionType fildPositionType;
+    @Column(name = "instagram" , length = 100)
+    private String instagram;
+
+    @Column(name = "telegram" , length = 100)
+    private String telegram;
+
+    @Column(name = "website" , length = 100)
+    private String website;
+
+    @Column(name = "about" , length = 100)
+    private String about;
+
+    @Column(name = "tegdir" , length = 100)
+    private String tagdir;
+
+    @Column(name = "fax" , length = 100)
+    private String fax;
+
+    @Column(name = "phone" , length = 200)
+    private String phone;
+
+    @Column(name = "address" , length = 200)
+    private String address;
+
+    @Column(name = "email" , length = 100)
+    private String email;
+
+    @Column(name = "sales_manager_name" , length = 100 )
+    private String salesManagerName;
+
+    @Column(name = "sales_manager_mobile" , length = 11 )
+    private String salesManagerMobile;
+
+    @Column(name = "post_doce" , length = 10 )
+    private String postCode;
+
+    @Column(name = "meta_description" , length = 200)
+    private String metaDescription;
+
+    @Column(name = "meta_keywords" , length = 200)
+    private String metaKeywords;
+
+    @Column(name = "vage_dar" , length = 100)
+    private String vageDar;
+
+    @Column(name = "has_malekiat")
+    private Boolean hasMalekiat;
+
+    @Column(name = "has_mostager")
+    private Boolean hasMostager;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "plan_type" , length = 100  , nullable = false)
-    private PlanType planType;
+    @Column(name = "order_register" , length = 20)
+    private OrderRegister orderRegister;
 
-    @Column(name = "letter_of_commendations" , length = 100)
-    private String letterOfCommendations;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "field_type" , length = 20)
+    private FieldType fieldType;
 
-    @Column(name = "shop_mobile" , length = 100 ,nullable = false)
-    private String shopMobile;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "panel_type" , length = 10)
+    private PanelType panelType;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "mohlate_ejare")
+    @JsonFormat(pattern = "yyyy-mm-dd")
+    private Date mohlateEjare;
+
+    @Column(name = "mostajer_name" , length = 100)
+    private String mastajerName;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "mostager_birthday")
+    @JsonFormat(pattern = "yyyy-mm-dd")
+    private Date mostagerBirthDay;
+
+    @Column(name = "mostajer_ssn" , length = 10)
+    private String mastajerSsn;
+
+    @Column(name = "mostajer_mobile" , length = 11)
+    private String mastajerMobile;
+
+    @Column(name = "shomareh_javaz" , length = 100)
+    private String shomarehJavaz;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "tarikh_etebar")
+    @JsonFormat(pattern = "yyyy-mm-dd")
+    private Date tarikhEtebar;
+
+    @Column(name = "has_mobasher")
+    private Boolean hasMobasher;
+
+    @Column(name = "mobasher_name" , length = 100)
+    private String mobasherName;
+
+    @Column(name = "rabet_name" , length = 100)
+    private String rabetName;
+
+    @Column(name = "semate_rabet" , length = 100)
+    private String semateRabet;
+
+    @Column(name = "rabet_mobile" , length = 11)
+    private String rabetMobile;
+
+    @Column(name = "social_mobile" , length = 11)
+    private String socialMobile;
 
     @Column(name = "image_top" , length = 100)
     private String imageTop;
@@ -101,15 +151,10 @@ public class ShopDetail {
     @Column(name = "image_about" , length = 100)
     private String imageAbout;
 
-    @Column(name = "image_letter_comandation" , length = 100)
-    private String imageLetterOfCommandation;
-
-
-
-
-
-
-
+    @Column(name = "lat")
+    private Double lat;
+    @Column(name = "lng")
+    private Double lng;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "create_date")
@@ -120,5 +165,24 @@ public class ShopDetail {
     @Column(name = "update_date")
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date updateDate;
+
+    @ManyToOne(cascade= CascadeType.ALL , fetch = FetchType.LAZY)
+    @JoinColumn(name="shop_owner_id")
+    private ShopOwner shopOwner;
+
+    @PrePersist
+    protected void onCreateDate(){
+        this.createDate = new Date();
+        log.info( "created :" + this.toString());
+    }
+    @PreUpdate
+    protected void onUpdateDate(){
+        this.createDate = new Date();
+        log.info( "updated :" + this.toString());
+    }
+    @PreRemove
+    protected void onRemove(){
+        log.info("removed :" + this.toString());
+    }
 }
 
