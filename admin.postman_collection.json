@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "962bb834-b95d-49c4-bd95-cb8c6b88f40f",
+		"name": "admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5913556"
+	},
+	"item": [
+		{
+			"name": "localhost:8084/api/admin/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKWkg3X1Y1WXEwYjdVYVl2QVl5S3FLbWNwWWxUR19pclNwWVNxRy1kUEt3In0.eyJleHAiOjE2ODUzMjQ2ODEsImlhdCI6MTY4NTI4ODY5MCwiYXV0aF90aW1lIjoxNjg1Mjg4NjgxLCJqdGkiOiJmNzM0OWViNS03NjFlLTRiNjUtYjYzMy0wMGYzMGQ5MWI1NTEiLCJpc3MiOiJodHRwOi8vdGVocmFuY2guY29tL2F1dGgvcmVhbG1zL3BhYW5vLXJlYWxtLXRlc3QiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiY2Q3YTEzODItODNlMS00YzBhLWI2NjItZmNjZmZiYTM0ZjVmIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoicGFhbm8tdGVzdCIsInNlc3Npb25fc3RhdGUiOiI4NmNlYTg2MS04N2ZhLTRhNTUtYjNhZC01OTQzNWI3ZDY2ZGMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1wYWFuby1yZWFsbS10ZXN0Iiwib2ZmbGluZV9hY2Nlc3MiLCJhZG1pbiIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoicmV6YSJ9.AbQKf_czGMRbwYTj77C94_aKJDeDBxn2XfNQVgUrvv9q_O_1cSOtzpaHTaHlgyODj0Pt8JiwvSKYkEY5lSycwu4bFQ_-cM_YZyRr3v2n0p9uX5kOKnMgO9d6-Bmi3vxgBBRQ7XOLxgvHC-G9Fqrmsqkrqjxt7zVVQxnUb7h-f63jFpDCRJVnmLQ7HT_lEWtnDSXFnPawpDJYHKceDlWXTLDv7pF_tCD52-oUlFyM1ZvZSB5pYw18-kpKAtk5DGiwoPjmbPoyVzC9fA0kbkDHZMgmwbyJe6E1a6IfEdvKp4J9qSg-jymfcKBfUdJVaEmd74rntGKhrEOx2pAOh0-ZWg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"mobile\":\"09028882204\",\r\n        \"ownerName\":\"aliali\",\r\n        \"ssn\":\"16565465\",\r\n        \"ownerBirthday\":\"2020-12-12\",\r\n        \"email\":\"ali@gmail.com\",\r\n        \"shopNamePersian\":\"قیصر\",\r\n        \"shopNameEnglish\":\"geysar2\",\r\n        \"instagram\":\"iiiiiiiii\",\r\n        \"telegram\":\"tttttttttt\",\r\n        \"website\":\"wwwwwwww\",\r\n        \"about\":\"abbbbbbbbb\",\r\n        \"tagdir\":\"ttttttttggg\",\r\n        \"fax\":\"5433333\",\r\n        \"phone\":\"5554444\",\r\n        \"address\":\"ddddsssss\",\r\n        \"salesManagerName\":\"awssss\",\r\n        \"salesManagerMobile\":\"4333333222\",\r\n        \"postCode\":\"54443333\",\r\n        \"metaDescription\":\"fdsf sfdsfsd \",\r\n        \"metaKeywords\":\"dddddss sssss\",\r\n        \"vageDar\":\"sssssssssu uuuuuuuuu\",\r\n        \"hasMalekiat\":true,\r\n        \"hasMostager\":false,\r\n        \"orderRegister\":\"SAHEB_PARVANEH\",\r\n        \"fieldType\":\"LUSTERBOBLE\",\r\n        \"panelType\":\"Gold\",\r\n        \"mohlateEjare\":\"2020-12-12\",\r\n        \"mastajerName\":\"ssa aaaa\",\r\n        \"mostagerBirthDay\":\"2020-12-12\",\r\n        \"mastajerMobile\":\"5453534534\",\r\n        \"shomarehJavaz\":\"545y5y54h45h5\",\r\n        \"tarikhEtebar\":\"2020-12-12\",\r\n        \"hasMobasher\":true,\r\n        \"mobasherName\":\"grg regreg erg\",\r\n        \"rabetName\":\"gfdgfdgd fdgfdgdfg\",\r\n        \"semateRabet\":\"mmmmmmmm\",\r\n        \"rabetMobile\":\"546546555\",\r\n        \"socialMobile\":\"655554444\",\r\n        \"imageTop\":\"tttttttttttt\",\r\n        \"imageTop2\":\"bbbbbbbbbbbbbbb\",\r\n        \"imageLogo\":\"544h54h54h5h\",\r\n        \"imageAbout\":\"98777788787\",\r\n        \"lat\":43.5643535,\r\n        \"lng\":48.5643535\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/api/admin/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"api",
+						"admin",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

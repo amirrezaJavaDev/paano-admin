@@ -1,0 +1,76 @@
+create table public.shop_owner(
+                            id bigint primary key ,
+                            mobile char(11) not null unique ,
+                            owner_name varchar(100) ,
+                            ssn char(10) ,
+                            birth_date timestamp ,
+                            create_date timestamp ,
+                            update_date timestamp
+);
+
+create table public.shop_detail(
+                                   id bigint primary key ,
+                                   shop_name_per varchar(100) not null,
+                                   shop_name_eng varchar(100) unique not null,
+                                   instagram varchar(100),
+                                   telegram varchar(100),
+                                   website varchar(100),
+                                   about varchar(100),
+                                   tegdir varchar(100),
+                                   fax varchar(100),
+                                   phone varchar(100),
+                                   address varchar(100),
+                                   email varchar(100),
+                                   sales_manager_name varchar(100),
+                                   sales_manager_mobile varchar(11),
+                                   post_doce varchar(10),
+                                   meta_description varchar(200),
+                                   meta_keywords varchar(200),
+                                   vage_dar varchar(200),
+                                   has_malekiat bool,
+                                   has_mostager bool,
+                                   order_register varchar(20),
+                                   field_type varchar(20),
+                                   panel_type varchar(20),
+                                   mohlate_ejare timestamp ,
+                                   mostajer_name varchar(100),
+                                   mostager_birthday timestamp ,
+                                   mostajer_ssn varchar(10),
+                                   mostajer_mobile varchar(11),
+                                   shomareh_javaz varchar(100),
+                                   tarikh_etebar timestamp ,
+                                   has_mobasher bool,
+                                   mobasher_name varchar(100),
+                                   rabet_name varchar(100),
+                                   semate_rabet varchar(100),
+                                   rabet_mobile varchar(11),
+                                   social_mobile varchar(11),
+                                   image_top varchar(100),
+                                   image_top_2 varchar(100),
+                                   image_logo varchar(100),
+                                   image_about varchar(100),
+                                   lat double precision,
+                                   lng double precision,
+                                   create_date timestamp ,
+                                   update_date timestamp,
+                                   shop_owner_id bigint unique not null ,
+                                   foreign key (shop_owner_id) references public.shop_owner(id)
+);
+
+CREATE SEQUENCE  IF NOT EXISTS shop_detail_seq
+    increment 1
+    minvalue 1
+    start with 1;
+
+CREATE SEQUENCE  IF NOT EXISTS shop_owner_seq
+    increment 1
+    minvalue 1
+    start with 1;
+
+
+alter table public.shop_detail
+    alter column id set default nextval('shop_detail_seq');
+
+
+alter table public.shop_owner
+    alter column id set default nextval('shop_owner_seq');
