@@ -50,12 +50,14 @@ public interface ShopOwnerDtoManager {
     @Mapping(source = "shopDetail.semateRabet",target = "semateRabet")
     @Mapping(source = "shopDetail.rabetMobile",target = "rabetMobile")
     @Mapping(source = "shopDetail.socialMobile",target = "socialMobile")
+    @Mapping(source = "shopDetail.mojtame",target = "mojtame")
     @Mapping(source = "shopDetail.lat",target = "lat")
     @Mapping(source = "shopDetail.lng",target = "lng")
-    @Mapping(source = "shopDetail.imageTop",target = "imageTop")
+    @Mapping(source = "shopDetail.imageTop",target = "imageTop" )
     @Mapping(source = "shopDetail.imageTop2",target = "imageTop2")
     @Mapping(source = "shopDetail.imageLogo",target = "imageLogo")
     @Mapping(source = "shopDetail.imageAbout",target = "imageAbout")
+    @Mapping(source = "shopDetail.imageGovahi",target = "imageGovahi")
     ShopOwnerDto transferOwnerShopAndDetailToDto(ShopOwner shopOwner, ShopDetail shopDetail);
 
 

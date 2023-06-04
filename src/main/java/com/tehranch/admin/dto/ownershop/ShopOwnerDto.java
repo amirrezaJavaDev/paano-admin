@@ -92,7 +92,7 @@ public class ShopOwnerDto {
 
     private OrderRegister orderRegister;
 
-    private FieldType fieldType;
+    private String fieldType;
 
     private PanelType panelType;
 
@@ -130,7 +130,8 @@ public class ShopOwnerDto {
 
     @Size(max = 11)
     private String socialMobile;
-
+    @Size(max = 100)
+    private String mojtame;
     @Size(max = 100)
     private String imageTop;
 
@@ -142,6 +143,9 @@ public class ShopOwnerDto {
 
     @Size(max = 100)
     private String imageAbout;
+
+    @Size(max = 100)
+    private String imageGovahi;
 
     private Double lat;
 

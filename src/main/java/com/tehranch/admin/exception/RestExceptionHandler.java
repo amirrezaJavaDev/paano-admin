@@ -47,4 +47,6 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         error.setStatusCode(556);
         return new ResponseEntity<>(error, error.getStatus());
     }
+
+
 }
