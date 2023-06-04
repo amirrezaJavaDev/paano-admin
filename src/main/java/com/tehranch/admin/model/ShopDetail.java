@@ -86,9 +86,8 @@ public class ShopDetail {
     @Column(name = "order_register" , length = 20)
     private OrderRegister orderRegister;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "field_type" , length = 20)
-    private FieldType fieldType;
+    @Column(name = "field_type" , length = 300)
+    private String fieldType;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "panel_type" , length = 10)
@@ -150,6 +149,12 @@ public class ShopDetail {
 
     @Column(name = "image_about" , length = 100)
     private String imageAbout;
+
+    @Column(name = "image_govahi" , length = 100)
+    private String imageGovahi;
+
+    @Column(name = "mojtame" , length = 100)
+    private String mojtame;
 
     @Column(name = "lat")
     private Double lat;

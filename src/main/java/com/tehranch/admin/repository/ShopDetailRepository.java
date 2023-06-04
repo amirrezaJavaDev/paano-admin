@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ShopDetailRepository extends JpaRepository<ShopDetail,Long> {
+public interface ShopDetailRepository extends JpaRepository<ShopDetail,Long> ,CustomShopDetailDao{
 
     Optional<ShopDetail> findByShopNameEnglish(String name);
 }

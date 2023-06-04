@@ -30,6 +30,10 @@ public class AdminShopServiceImpl implements AdminShopService
     private final ShopDetailRepository shopDetailRepo;
     private final ShopOwnerRepository shopOwnerRepo;
     private ShopOwnerDtoManager shopOwnerDtoManager = Mappers.getMapper(ShopOwnerDtoManager.class);
+
+
+
+
     private boolean authorizeUser(String cookie){
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -58,6 +62,11 @@ public class AdminShopServiceImpl implements AdminShopService
             throw new CustomException("Not Authorized");
         }
     }
+
+
+
+
+
     @Override
     public ShopOwnerDto findShopDetailByEngName(String encoding, String shopName){
        try{
